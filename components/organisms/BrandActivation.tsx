@@ -28,6 +28,7 @@ interface BrandActivationProps {
 
 const BrandActivation = ({ data, title }: BrandActivationProps) => {
   SwiperCore.use([Autoplay, Navigation, Pagination, Scrollbar, A11y]);
+
   if (isEmpty(data)) {
     return null;
   }
@@ -57,7 +58,7 @@ const BrandActivation = ({ data, title }: BrandActivationProps) => {
           className="lg:h-[27vw] h-[40vw]"
         >
           {data.map((event, index) => (
-            <SwiperSlide className="lg:mr-2 mr-[4px]" key={index}>
+            <SwiperSlide className="" key={index}>
               <BrandCard data={event} />
             </SwiperSlide>
           ))}

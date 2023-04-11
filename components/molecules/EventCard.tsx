@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 
 import { AiOutlineInfoCircle } from "react-icons/ai";
@@ -8,6 +10,13 @@ interface EventCardProps {
 }
 
 const EventCard: React.FC<EventCardProps> = ({ data }) => {
+  const router = useRouter();
+
+  const handleClick = (e: any) => {
+    e.preventDefault();
+    router.push(`/concert/${data.slug}`);
+  };
+
   return (
     <div className="group bg-zinc-900 col-span relative h-[12vw]">
       <Image
@@ -65,6 +74,7 @@ const EventCard: React.FC<EventCardProps> = ({ data }) => {
           alt="Thumbnail"
           width={500}
           height={10}
+          onClick={handleClick}
         />
         <div
           className="
@@ -95,9 +105,10 @@ const EventCard: React.FC<EventCardProps> = ({ data }) => {
                 transition
                 hover:bg-neutral-300
                 "
-              onClick={() => {}}
             >
-              <AiOutlineInfoCircle size={30} />
+              <Link href={/concert/ + data.slug}>
+                <AiOutlineInfoCircle size={30} />
+              </Link>
             </div>
             <p className="text-white text-[14px] w-[150px] font-bold">
               {data.title}

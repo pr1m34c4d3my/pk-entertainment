@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { Component, useCallback, useEffect, useState } from "react";
 import { BsChevronDown, BsSearch } from "react-icons/bs";
 
 import defaultUser from "@/public/images/default-blue.png";
@@ -8,6 +8,7 @@ import Navbaritems from "../molecules/Navbaritems";
 import { Menu } from "@/lib/MenuData";
 import MobileNav from "../molecules/MobileNav";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 type Props = {};
 
@@ -16,6 +17,8 @@ const TOP_OFFSET = 66;
 const Header = (props: Props) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [showBackground, setShowBackground] = useState(false);
+
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,6 +40,11 @@ const Header = (props: Props) => {
     setShowMobileMenu((current) => !current);
   }, []);
 
+  const handleClick = (e: any) => {
+    e.preventDefault();
+    router.push("/");
+  };
+
   return (
     <header className="flex w-full z-40 fixed">
       <nav
@@ -44,11 +52,11 @@ const Header = (props: Props) => {
           showBackground ? "bg-black bg-opacity-90" : ""
         }`}
       >
-        <Link href="#"></Link>
         <Image
-          className="w-[40%] md:w-[30%] lg:w-[20%]"
+          className="w-[40%] md:w-[30%] lg:w-[20%] cursor-pointer"
           src={logo}
           alt="PK Entertainment"
+          onClick={handleClick}
         />
         <div className="lg:flex ml-8 gap-7 hidden">
           <Navbaritems />
