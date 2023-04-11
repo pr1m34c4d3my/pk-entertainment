@@ -2,12 +2,11 @@ import Image from "next/image";
 import React, { Component, useCallback, useEffect, useState } from "react";
 import { BsChevronDown, BsSearch } from "react-icons/bs";
 
-import defaultUser from "@/public/images/default-blue.png";
+import { motion } from "framer-motion";
+
 import logo from "@/public/images/logo.png";
 import Navbaritems from "../molecules/Navbaritems";
-import { Menu } from "@/lib/MenuData";
 import MobileNav from "../molecules/MobileNav";
-import Link from "next/link";
 import { useRouter } from "next/router";
 
 type Props = {};
@@ -47,7 +46,11 @@ const Header = (props: Props) => {
 
   return (
     <header className="flex w-full z-40 fixed">
-      <nav
+      <motion.nav
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
         className={`px-4 md:px-16 py-1 flex flex-row items-center transition duration-500 w-full ${
           showBackground ? "bg-black bg-opacity-90" : ""
         }`}
@@ -90,7 +93,7 @@ const Header = (props: Props) => {
             </div>
           </div>
         </div>
-      </nav>
+      </motion.nav>
     </header>
   );
 };

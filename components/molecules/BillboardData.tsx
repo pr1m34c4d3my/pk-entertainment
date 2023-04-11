@@ -1,5 +1,6 @@
 import React from "react";
 import { AiOutlineInfoCircle } from "react-icons/ai";
+import { motion } from "framer-motion";
 
 import PlayButton from "../atoms/PlayButton";
 import Link from "next/link";
@@ -29,16 +30,39 @@ const BillboardData = ({ concert }: Props) => {
         src={concert.video}
       ></video>
       <div className="absolute top-[25%] md:top-[30%] ml-4 md:ml-16">
-        <p className="text-white text-1xl md:text-5xl h-full w-[40%] lg:text-6xl font-bold drop-shadow-lg">
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1.5 }}
+          viewport={{ once: true }}
+          className="text-white text-1xl md:text-5xl h-full w-[40%] lg:text-6xl font-bold drop-shadow-lg"
+        >
           {concert.title}
-        </p>
-        <p className="text-white text-[8px] md:text-lg md:mt-4 w-[90%] md:w-[80%] lg:w-[50%] drop-shadow-xlS">
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="text-white text-[8px] md:text-lg md:mt-4 w-[90%] md:w-[80%] lg:w-[50%] drop-shadow-xlS"
+        >
           {concert.description}
-        </p>
+        </motion.p>
         <div className="flex flex-row items-center mt-3 md:mt-4 gap-3">
-          <PlayButton movieId="test" />
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 1 }}
+            viewport={{ once: true }}
+          >
+            <PlayButton movieId="test" />
+          </motion.div>
           <Link href={`/concert/${concert.slug}`}>
-            <button
+            <motion.button
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 1.5 }}
+              viewport={{ once: true }}
               className="
             bg-white/30
             text-white
@@ -60,7 +84,7 @@ const BillboardData = ({ concert }: Props) => {
             >
               <AiOutlineInfoCircle className="w-4 md:w-7 mt-[1px]" />
               More Info
-            </button>
+            </motion.button>
           </Link>
         </div>
       </div>
