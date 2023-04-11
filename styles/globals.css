@@ -18,5 +18,14 @@
 }
 
 body {
-  @apply bg-zinc-900;
+  @apply bg-zinc-900 h-full overflow-x-hidden;
+  /*
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+    */
 }

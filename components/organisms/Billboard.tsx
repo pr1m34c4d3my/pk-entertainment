@@ -32,21 +32,28 @@ const Billboard = ({ data }: Events) => {
           delay: 5000,
         }}
         loop={true}
-        pagination={{ clickable: true }}
+        pagination={{
+          clickable: true,
+          dynamicBullets: true,
+          dynamicMainBullets: 1,
+        }}
       >
         {data.map((v, i) => {
           return (
-            <>
+            <div key={i}>
               {v.upcoming == true ? (
                 <SwiperSlide key={i}>
                   <BillboardData
-                    title={v.title}
-                    thumbnail={v.thumbnail}
-                    description={v.description}
+                    concert={{
+                      title: v.title,
+                      thumbnail: v.thumbnail,
+                      description: v.description,
+                      slug: v.slug,
+                    }}
                   />
                 </SwiperSlide>
               ) : null}
-            </>
+            </div>
           );
         })}
       </Swiper>

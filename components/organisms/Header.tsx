@@ -40,22 +40,25 @@ const Header = (props: Props) => {
   return (
     <header className="flex w-full z-40 fixed">
       <nav
-        className={`px-4 md:px-16 py-6 flex flex-row items-center transition duration-500 w-full ${
-          showBackground ? "bg-zinc-900 bg-opacity-90" : ""
+        className={`px-4 md:px-16 py-1 flex flex-row items-center transition duration-500 w-full ${
+          showBackground ? "bg-black bg-opacity-90" : ""
         }`}
       >
         <Link href="#"></Link>
         <Image
-          className="w-[50%] lg:w-[15%]"
+          className="w-[40%] md:w-[30%] lg:w-[20%]"
           src={logo}
           alt="PK Entertainment"
         />
         <div className="lg:flex ml-8 gap-7 hidden">
-          <Navbaritems data={Menu} />
+          <Navbaritems />
         </div>
         <div className="lg:hidden flex flex-row items-center gap-7 ml-auto cursor-pointer relative">
           <BsSearch className="text-white" />
-          <div onClick={toggleMobileMenu} className="flex gap-2 items-center">
+          <div
+            onClick={toggleMobileMenu}
+            className="flex gap-2 items-center relative"
+          >
             <p className="text-white font-medium">Browse</p>
             <BsChevronDown
               className={`text-white font-medium mt-[2px] transition ${

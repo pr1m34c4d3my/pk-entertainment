@@ -1,5 +1,5 @@
 import React from "react";
-import { AiOutlinePlayCircle } from "react-icons/ai";
+import { BsFillTicketPerforatedFill } from "react-icons/bs";
 import { useRouter } from "next/router";
 
 interface PlayButtonProps {
@@ -25,8 +25,11 @@ const PlayButton: React.FC<PlayButtonProps> = ({ movieId }) => {
         items-center
         hover:bg-neutral-300
         transition
+        gap-2
+        backdrop-blur-sm
         "
     >
+      <BsFillTicketPerforatedFill className="mt-[1px]" />
       Buy Ticket
     </button>
   );
