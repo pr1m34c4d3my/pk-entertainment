@@ -44,7 +44,7 @@ const Navbaritems = () => {
             className={`text-white font-medium mt-[2px] transition `}
           />
         </Link>
-        <ul className="bg-black hidden absolute top-8 left-0 py-5 flex-col border-2 border-gray-800 group-hover:flex group-hover:flex-col gap-2 w-[150%]">
+        <ul className="bg-black hidden absolute top-6 z-50 left-0 py-5 flex-col border-2 border-gray-800 group-hover:flex group-hover:flex-col gap-2 w-[150%]">
           <li className="px-3 text-center text-white hover:underline group-hover:flex">
             <Link href="">About Us</Link>
           </li>

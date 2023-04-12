@@ -7,6 +7,7 @@ const nextConfig = {
       "loket-asset-production.s3.ap-southeast-1.amazonaws.com",
       "s3-ap-southeast-1.amazonaws.com",
       "media.graphassets.com",
+      "apahabar.s3.ap-southeast-1.amazonaws.com",
     ],
   },
 };

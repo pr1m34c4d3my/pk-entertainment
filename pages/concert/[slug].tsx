@@ -25,6 +25,7 @@ import { CONCERT, QUERY, SLUGLIST } from "@/lib/graphql/query";
 import SlugHeading, { SingleEvent } from "@/components/molecules/SlugHeading";
 import Stage from "@/components/organisms/Stage";
 import PlayButton from "@/components/atoms/PlayButton";
+import ArtistInfo from "@/components/organisms/ArtistInfo";
 
 export async function getStaticPaths() {
   const { concerts }: any = await api.request(SLUGLIST);
@@ -85,49 +86,25 @@ const Concert = ({ concert }: SingleEvent) => {
         </SwiperSlide>
       </Swiper>
 
-      <div className="hidden lg:block absolute w-full top-[60%] md:top-[50%] text-white z-50">
-        <div className="lg:w-[1366px] md:w-[720px] w-[430px] mx-auto h-auto rounded-[50px] overflow-hidden bg-zinc-400/30 backdrop-blur-xl">
-          <div className="flex lg:flex-row flex-col p-8 w-full items-center">
-            <div className="w-3/12 h-auto flex justify-center self-end">
-              <figure className="w-64 h-64 rounded-full bg-zinc-400/10 backdrop-blur-sxl"></figure>
-            </div>
-            <div className="w-9/12 h-auto flex flex-col gap-2">
-              <div>
-                <p className="font-bold text-4xl">{concert.title}</p>
-              </div>
-              <div className="w-full h-1 bg-zinc-500/20 rounded-full"></div>
-              <div>
-                <p>{concert.date}</p>
-              </div>
-              <div>
-                <p className="font-medium text-xl">
-                  {concert.eventStage} <span className="font-light">|</span>{" "}
-                  {concert.city}
-                </p>
-              </div>
-              <div>
-                <p className="font-normal text-zinc-300">
-                  {concert.description}
-                </p>
-              </div>
-              <div className="text-black mt-3">
-                <PlayButton movieId="test" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ArtistInfo
+        concert={{
+          title: concert.title,
+          thumbnail: concert.thumbnail,
+          eventStage: concert.eventStage,
+          description: concert.description,
+          city: concert.city,
+          date: concert.date,
+        }}
+      />
 
-      <div className="">
-        <Stage
-          concert={{
-            title: "Main Stage Layout",
-            stageLayout: concert.stageLayout,
-            date: concert.date,
-            city: concert.city,
-          }}
-        />
-      </div>
+      <Stage
+        concert={{
+          title: "Main Stage Layout",
+          stageLayout: concert.stageLayout,
+          date: concert.date,
+          city: concert.city,
+        }}
+      />
     </>
   );
 };

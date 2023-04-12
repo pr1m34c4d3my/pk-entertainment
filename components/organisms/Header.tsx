@@ -45,7 +45,7 @@ const Header = (props: Props) => {
   };
 
   return (
-    <header className="flex w-full z-40 fixed">
+    <header className="flex w-full z-[100] fixed">
       <motion.nav
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -85,13 +85,6 @@ const Header = (props: Props) => {
             <BsSearch className="text-white font-bold" />
           </div>
           <div className="text-white">Login</div>
-          <div className="flex flex-row items-center gap-2 cursor-pointer relative">
-            <div className="w-6 h-6 lg:w-10 lg:h-10 rounded-md overflow-hidden">
-              {/* 
-                <Image src={defaultUser} alt="user" />
-              */}
-            </div>
-          </div>
         </div>
       </motion.nav>
     </header>

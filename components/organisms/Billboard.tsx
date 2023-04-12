@@ -29,7 +29,7 @@ const Billboard = ({ data }: Events) => {
       <Swiper
         slidesPerView={1}
         autoplay={{
-          delay: 5000,
+          delay: 10000,
         }}
         loop={true}
         pagination={{
