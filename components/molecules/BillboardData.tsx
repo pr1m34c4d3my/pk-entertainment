@@ -52,7 +52,7 @@ const BillboardData = ({ concert }: Props) => {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 1 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
             viewport={{ once: true }}
           >
             <PlayButton movieId="test" />
@@ -61,7 +61,7 @@ const BillboardData = ({ concert }: Props) => {
             <motion.button
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 1.5 }}
+              transition={{ duration: 0.5, delay: 1 }}
               viewport={{ once: true }}
               className="
             bg-white/30

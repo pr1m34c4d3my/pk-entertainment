@@ -38,6 +38,7 @@ const EventCard: React.FC<EventCardProps> = ({ data }) => {
         alt="Thumbnail"
         width={500}
         height={10}
+        onClick={handleClick}
       />
       <div
         className="

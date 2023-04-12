@@ -38,9 +38,9 @@ const Stage = ({ concert }: SingleEvent) => {
         </div>
       </div>
 
-      <div className="flex flex-row w-full justify-center items-center ">
-        <div className="w-6/12 ">
-          <figure className="w-[700px]">
+      <div className="flex lg:flex-row flex-col w-full justify-center items-center ">
+        <div className="lg:w-6/12 w-full ">
+          <figure className="lg:w-[700px] w-[330px]">
             <Image
               className="w-full"
               src={concert.stageLayout.url}
@@ -50,7 +50,7 @@ const Stage = ({ concert }: SingleEvent) => {
             />
           </figure>
         </div>
-        <div className="w-5/12 h-auto flex flex-col gap-6 bg-zinc-800  rounded-xl overflow-hidden shadow-xl">
+        <div className="lg:w-5/12 w-full h-auto flex flex-col gap-6 bg-zinc-800  rounded-xl overflow-hidden shadow-xl">
           <div className="flex justify-between w-full">
             <div className="bg-zinc-700 p-4 rounded-bl-lg cursor-pointer hover:bg-zinc-500 transition w-full">
               <p className="text-white text-center">Tickets</p>
