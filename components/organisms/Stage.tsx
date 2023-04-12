@@ -26,7 +26,7 @@ const Stage = ({ concert }: SingleEvent) => {
     return null;
   }
   return (
-    <div className="px-4 md:px-12 mt-4 space-y-8">
+    <div className="px-4 md:px-12 mt-4 space-y-8 max-w-[1600px] mx-auto">
       <div>
         <div className="flex justify-between items-center">
           <div className="flex gap-2">
@@ -38,9 +38,9 @@ const Stage = ({ concert }: SingleEvent) => {
         </div>
       </div>
 
-      <div className="flex lg:flex-row flex-col w-full justify-center items-center ">
-        <div className="lg:w-6/12 w-full ">
-          <figure className="lg:w-[700px] w-[330px]">
+      <div className="flex lg:flex-row md:flex-row flex-col w-full mx-auto justify-center gap-20 items-center ">
+        <div className="lg:w-4/12 w-full flex justify-center">
+          <figure className="lg:w-12/12 w-12/12 ">
             <Image
               className="w-full"
               src={concert.stageLayout.url}
@@ -50,7 +50,7 @@ const Stage = ({ concert }: SingleEvent) => {
             />
           </figure>
         </div>
-        <div className="lg:w-5/12 w-full h-auto flex flex-col gap-6 bg-zinc-800  rounded-xl overflow-hidden shadow-xl">
+        <div className="lg:w-6/12 w-full h-auto flex flex-col gap-6 bg-zinc-800  rounded-xl overflow-hidden shadow-xl">
           <div className="flex justify-between w-full">
             <div className="bg-zinc-700 p-4 rounded-bl-lg cursor-pointer hover:bg-zinc-500 transition w-full">
               <p className="text-white text-center">Tickets</p>
@@ -61,7 +61,7 @@ const Stage = ({ concert }: SingleEvent) => {
           </div>
           <div className="p-6 flex flex-col gap-7">
             <div className="flex flex-row items-center justify-between ">
-              <div className="flex gap-24">
+              <div className="flex gap-10">
                 <div className="flex flex-col">
                   <p className="text-white font-semibold">{concert.date}</p>
                   <p className="text-zinc-300 font-light">{concert.city}</p>
@@ -79,7 +79,7 @@ const Stage = ({ concert }: SingleEvent) => {
               </div>
             </div>
             <div className="flex flex-row items-center justify-between ">
-              <div className="flex gap-24">
+              <div className="flex gap-10">
                 <div className="flex flex-col">
                   <p className="text-white font-semibold">{concert.date}</p>
                   <p className="text-zinc-300 font-light">{concert.city}</p>
